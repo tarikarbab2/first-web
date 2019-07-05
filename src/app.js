@@ -4,6 +4,7 @@ const path=require("path")
 const hbs=require("hbs")
 const location=require("./utils/location.js")
  const forecast=require("./utils/forecast.js")
+ const port=process.env.PORT || 3000
 
 //path declartion
 const public=path.join(__dirname,"../public")
@@ -73,6 +74,6 @@ app.get("*",(req,res)=>{
     res.redirect("/")
 })
 
-app.listen(3000,(req,res)=>{
-    console.log("the server has start")
+app.listen(port,(req,res)=>{
+    console.log("the server has start in "+port)
 })
